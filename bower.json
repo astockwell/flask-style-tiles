@@ -1,14 +1,13 @@
 {
-	"name": "flask",
-	"version": "0.1.0",
+	"name": "ESD Style Tiles",
+	"version": "1.0.0",
 	"authors": [
 		"kylelarkin <kyle@extrasmalldesign.com>",
-		"astockwell <astockwell@gmail.com>"
+		"astockwell <alex@extrasmalldesign.com>"
 	],
-	"description": "Wordpress starter theme",
+	"description": "ESD Style Tiles Scaffold",
 	"keywords": [
-		"wordpress",
-		"theme"
+		"style tiles"
 	],
 	"license": "MIT",
 	"private": false,
