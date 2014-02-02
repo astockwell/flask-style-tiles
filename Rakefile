@@ -13,5 +13,5 @@ task :tile do
 	File.open(File.join("source","v#{@iteration}.html.erb"), 'w') { |file| file.write(template.result) }
 	File.open(File.join("source","stylesheets","styletiles","_v#{@iteration}.scss"), 'w') { |file| file.write(stylesheet.result) }
 
-	File.open(File.join("source","stylesheets","screen.scss"), 'a') { |f| f.write("@import \"styletiles/v#{@iteration}\";") }
+	File.open(File.join("source","stylesheets","screen.scss"), 'a') { |f| f.write("@import \"styletiles/v#{@iteration}\";\n") }
 end
