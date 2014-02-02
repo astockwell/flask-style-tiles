@@ -1,7 +1,8 @@
 require 'erb'
 require 'rubygems'
 
-task :tile do
+desc "Create new style tile scaffold"
+task :new do
 	# Read in templates
 	template   = ERB.new(File.read(File.join("templates","styletile.html.erb")))
 	stylesheet = ERB.new(File.read(File.join("templates","stylesheet.scss.erb")))
@@ -17,4 +18,11 @@ task :tile do
 
 	# Include new SASS file in screen.scss
 	File.open(File.join("source","stylesheets","screen.scss"), 'a') { |f| f.write("\n@import \"styletiles/v#{@iteration}\";") }
+end
+
+desc "Initialize new project"
+task :init do
+	system(%Q[@bundle install])
+	system(%Q[@bundle exec bourbon install --path source/stylesheets/framework])
+	system(%Q[@cd source/stylesheets/framework; bundle exec neat install; cd ../../])
 end
