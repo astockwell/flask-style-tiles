@@ -13,11 +13,10 @@
   <title><%= current_page.data.title || "Styletiles | Extra Small Design" %></title>
 
   <%= stylesheet_link_tag "screen" %>
-  <%= javascript_include_tag "all" %>
+  <%= javascript_include_tag "script" %>
 
   <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <%= javascript_include_tag "all" %>
+    <%= javascript_include_tag "ie" %>
   <![endif]-->
 </head>
 
