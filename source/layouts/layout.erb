@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 	<!-- Use title if it's in the page YAML frontmatter -->
-	<title><%= current_page.data.title || "Styletiles | Extra Small Design" %></title>
+	<title><%= "#{current_page.data.title} | " %>Styletiles | Extra Small Design</title>
 
 	<%= stylesheet_link_tag "screen" %>
 	<%= javascript_include_tag "script" %>
@@ -31,7 +31,7 @@
 			<%= tag :img, src: "images/extra-small-logo.png", alt: "Extra Small Logo" %>
 		</div>
 		<div class="title">
-			<h1>The Learning Shuk</h1>
+			<h1>Client Name</h1>
 			<h2>Style Tile <span class="fade"><%= current_page.data.title %></span></h2>
 		</div>
 		<nav>
