@@ -1,0 +1,146 @@
+/* SCSS Framework boilerplate from Flask: https://github.com/kylelarkin/flask */
+
+// -------------------------------------------------
+// Flask Bourbon Imports
+// ---------------------------------------------- */
+@import "bourbon";
+@import "neat";
+@import "grid";
+
+
+// -------------------------------------------------
+// Flask Variables
+// ---------------------------------------------- */
+$theme-dir: "flask";
+
+$heading-font: Helvetica, Arial, sans-serif;
+$body-font: Helvetica, Arial, sans-serif;
+
+$body-color: #555;
+$heading-color: #333;
+$highlight-color: #ccc;
+$link-color: #333;
+$link-hover: #000;
+
+$ani_speed: 250ms;
+
+
+// -------------------------------------------------
+// Custom Text Selection Setup
+// ---------------------------------------------- */
+body,select,input,textarea {
+	color:#333;
+}
+// Custom text-selection colors (remove any text shadows:twitter.com/miketaylr/status/12228805301)
+::-moz-selection {
+	background:$highlight-color;
+	color:#000;
+	text-shadow:none;
+}
+::selection {
+	background:$highlight-color;
+	color:#000;
+	text-shadow:none;
+}
+// j.mp/webkit-tap-highlight-color
+a:link {
+	-webkit-tap-highlight-color:$highlight-color;
+}
+ins {
+	background-color:$highlight-color;
+	color:#000;
+	text-decoration:none;
+
+}
+mark {
+	background-color:$highlight-color;
+	color:#000;
+	font-style:italic;
+	font-weight:bold;
+}
+
+
+// -------------------------------------------------
+// Flask Mixins
+// ---------------------------------------------- */
+
+// Logo Setup
+@mixin logo {
+	@include retina-image('null', 0, 0); // ('file_name_sans_extension', height, width)
+	background-repeat: no-repeat;
+	display: block;
+	height: 0; // Set height
+	text-indent: -999px;
+	width: 0; // Set width
+}
+
+// Remove UL Styling
+@mixin ul-reset {
+	list-style: none;
+	margin: 0;
+	padding-bottom: 0;
+}
+
+// Rem Font Sizing
+@mixin font-size-rem($size: 1.6){
+  font-size: ($size * 10) + px;
+  font-size: $size + rem;
+}
+
+// Hyphenation (FF compatible)
+@mixin hyphenation(){
+	// -ms-word-break: break-all;
+	// word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+// Responsive images!
+@mixin img-respond(){
+	display: block;
+	width: 100%;
+}
+
+// CSS Navigation Dropdown Transitions (not for iPad)
+@mixin trans-fade-hidden {
+	@include transition(opacity $ani_speed linear 0ms, visibility $ani_speed linear 0ms);
+	visibility: hidden;
+	opacity: 0;
+}
+@mixin trans-fade-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+// Center element vertically without knowing height (IE9+) via http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+%vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+// Media Object
+@mixin media-object($gutter: 10px){
+	&, .body {
+		overflow:hidden;
+		_overflow:visible;
+		zoom:1;
+	}
+	.img {
+		float:left; margin-right: $gutter;
+	}
+	.img img {
+		display:block;
+	}
+	.imgExt {
+		float:right; margin-left: $gutter;
+	}
+}
+
+// -------------------------------------------------
+// Project-specific Mixins
+// ---------------------------------------------- */

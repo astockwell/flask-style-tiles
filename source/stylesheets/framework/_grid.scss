@@ -1,0 +1,23 @@
+@import "neat-helpers";
+
+// Set Max Width of Outer Container
+$max-width: em(1280);
+
+// Visual Grid Toggle
+$visual-grid: false;
+
+// Setup Breakpoints
+$no_of_columns: 12;
+$small-breakpoint:  580px;
+$medium-breakpoint: 768px;
+$large-breakpoint:  1024px;
+
+$pre-small-only:  new-breakpoint(max-width ($small-breakpoint - 1) $no_of_columns);
+$small:           new-breakpoint(min-width $small-breakpoint $no_of_columns);
+$small-only:      new-breakpoint(min-width $small-breakpoint max-width ($medium-breakpoint - 1) $no_of_columns);
+$small-medium:    new-breakpoint(min-width $small-breakpoint max-width ($large-breakpoint - 1) $no_of_columns);
+$pre-medium-only: new-breakpoint(max-width ($medium-breakpoint - 1) $no_of_columns);
+$medium:          new-breakpoint(min-width $medium-breakpoint $no_of_columns);
+$medium-only:     new-breakpoint(min-width $medium-breakpoint max-width ($large-breakpoint - 1) $no_of_columns);
+$pre-large-only:  new-breakpoint(max-width ($large-breakpoint - 1) $no_of_columns);
+$large:           new-breakpoint(min-width $large-breakpoint $no_of_columns);

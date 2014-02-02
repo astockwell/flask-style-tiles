@@ -1,0 +1,12 @@
+.collapse {
+	overflow: hidden;
+	zoom: 1;
+}
+
+// Mixins
+@mixin bs-uncollapse {
+	&.collapse {
+		overflow: visible;
+		display: block;
+	}
+}

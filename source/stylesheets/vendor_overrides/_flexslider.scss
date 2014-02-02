@@ -1,0 +1,41 @@
+/* Flexslider Overrides */
+.flexslider {
+	&, * {
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+	background: transparent;
+	border: none;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	-o-border-radius: none;
+	border-radius: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	margin: 0;
+	z-index: 0;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-bottom: 0;
+
+		& > li {
+			//** If you're having issues with text aliasing cross-browser, try
+			//** removing this declaration, but watch out for bouncing slide images!
+			-webkit-backface-visibility: visible;
+		}
+	}
+	.flex-direction-nav a {
+		&:before {
+			content: "";
+			display: none;
+		}
+		&.flex-disabled {
+			visibility: hidden;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.social-icons {
+	$height: 22px;
+	$width: $height;
+
+	a {
+		// background: url('../img/social_media_sprite.png') no-repeat 0 0;
+		display: inline-block;
+		height: $height;
+		margin: 0 3px 0 0;
+		width: $width;
+
+		$i: 0;
+		@each $icon in fb, tw, pin, ig {
+			&.#{$icon} { background-position: ($i * -$width) 0; }
+			&.#{$icon}:hover { background-position: ($i * -$width) (-1 * $height); }
+			$i: $i + 1;
+		}
+	}
+}
