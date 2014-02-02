@@ -22,9 +22,6 @@
 
 <body class="<%= page_classes %>">
 
-	<h1><%= link_to "Previous Article", prev_link, :title => "Previous Style Tile" %></h1>
-	<h1><%= link_to "Next Article", next_link, :title => "Next Style Tile" %></h1>
-
 	<div class="styletile">
 		<%= yield %>
 	</div>
@@ -39,7 +36,20 @@
 		</div>
 		<nav>
 			<ul>
-				<li><a href="v2.html" title="next"><span class="arrows">&#9758;</span></a></li>
+				<% if next_link %>
+				<li>
+					<% link_to next_link, :title => "Next Style Tile" do %>
+						<span class="arrows">&#9758;</span>
+					<% end %>
+				</li>
+				<% end %>
+				<% if prev_link %>
+				<li>
+					<% link_to prev_link, :title => "Previous Style Tile" do %>
+						<span class="arrows">&#9756;</span>
+					<% end %>
+				</li>
+				<% end %>
 			</ul>
 		</nav>
 	</footer>
