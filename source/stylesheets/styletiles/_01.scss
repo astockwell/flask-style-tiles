@@ -1,0 +1,6 @@
+body.styletile-01 {
+
+	@include media($small)  {}
+	@include media($medium) {}
+	@include media($large)  {}
+}

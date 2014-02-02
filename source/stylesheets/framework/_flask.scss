@@ -3,16 +3,14 @@
 // -------------------------------------------------
 // Flask Bourbon Imports
 // ---------------------------------------------- */
-@import "bourbon";
-@import "neat";
+@import "bourbon/bourbon";
+@import "neat/neat";
 @import "grid";
 
 
 // -------------------------------------------------
 // Flask Variables
 // ---------------------------------------------- */
-$theme-dir: "flask";
-
 $heading-font: Helvetica, Arial, sans-serif;
 $body-font: Helvetica, Arial, sans-serif;
 

@@ -1,0 +1,31 @@
+{
+	"name": "flask",
+	"version": "0.1.0",
+	"authors": [
+		"kylelarkin <kyle@extrasmalldesign.com>",
+		"astockwell <astockwell@gmail.com>"
+	],
+	"description": "Wordpress starter theme",
+	"keywords": [
+		"wordpress",
+		"theme"
+	],
+	"license": "MIT",
+	"private": false,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"jQuery": "https://code.jquery.com/jquery-1.10.2.min.js",
+		"matchmedia": "~0.1.0",
+		"respond": "~1.4.1",
+		"bootstrap": "~3.0.3",
+		"enquire": "~2.1.0",
+		"flexslider": "https://github.com/woothemes/FlexSlider/archive/version/2.2.2.zip",
+		"fancybox": "~2.1.5"
+	}
+}
