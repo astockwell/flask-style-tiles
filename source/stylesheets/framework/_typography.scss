@@ -81,10 +81,12 @@ strong, b {
 		font-weight: bold;
 	}
 }
+ol {
+	margin: 1em 0 1em 1.25em;
+}
 ul {
 	list-style: disc;
-	margin: 0 0 0 1.1em;
-	padding-bottom: 1em;
+	margin: 1em 0 1em 1.1em;
 
 	// remove styling for nav ul's
 	nav & {

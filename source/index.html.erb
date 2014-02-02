@@ -1,10 +1,54 @@
 ---
-title: Welcome to Middleman
+title: Option 1
 ---
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<div class="wrapper">
+	<!-- <img class="logo" src="img/original-logo.png" alt="light-logo" /> -->
+	<div class="content">
+		<div class="column1">
+			<div class="headings">
+				<h1>Level 1 Heading</h1>
+				<h2>Level 2 Heading</h2>
+				<h3>Level 3 Heading</h3>
+				<h4>Level 4 Heading</h4>
+			</div>
+			<div class="lists">
+				<ul>
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3
+						<ul>
+							<li>Nested List item 1</li>
+							<li>Nested List item 2</li>
+							<li>Nested List item 3</li>
+						</ul>
+					</li>
+					<li>List Item 4</li>
+				</ul>
+				<ol>
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ol>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Ratione, reiciendis, quae, tenetur</strong> illo sed accusamus adipisci iure <em>facere magnam consectetur</em> ab eaque vitae magni voluptas quasi odio mollitia saepe earum?</p>
+			<p>Sed egestas, ante et vulputate volutpat, eros <a href="">pede semper est</a>, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. <a href="">Praesent elementum hendrerit tortor</a>. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc <a href="">sapien ornare nisl</a>. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+		</div>
+		<div class="column2">
+			<div class="swatches">
+				<div class="swatch1"></div>
+				<div class="swatch2"></div>
+				<div class="swatch3"></div>
+				<div class="swatch4"></div>
+			</div>
+
+			<form>
+				<%= input_tag :text, placeholder: "Text Field" %>
+				<%= text_area_tag :username, rows: 4 %>
+				<%= input_tag :submit, value: "Submit" %>
+			</form>
+
+			<a class="button" href="#" title="button">Button</a>
+		</div>
+	</div>
+</div>

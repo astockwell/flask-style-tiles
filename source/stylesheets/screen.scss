@@ -30,6 +30,7 @@
 // -------------------------------------------------
 // Modules
 // ---------------------------------------------- */
+@import "modules/footer";
 // @import "modules/social-icons";
 
 
@@ -40,17 +41,12 @@ body {
 	padding: 0 3%;
 }
 
-.wrapper {
-	// @include media($small) {
-	// 	@include span-columns(6);
-	// 	@include shift(3);
-	// }
-	// @include media($medium) {}
-	// @include media($large) {}
+.styletile {
+	margin-bottom: 100px;
 
-	.inner {
-		@include outer-container();
-	}
+	// .inner {
+	// 	@include outer-container();
+	// }
 }
 
 
