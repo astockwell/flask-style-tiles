@@ -11,16 +11,8 @@
 // -------------------------------------------------
 // Flask Variables
 // ---------------------------------------------- */
-$heading-font: Helvetica, Arial, sans-serif;
-$body-font: Helvetica, Arial, sans-serif;
 
-$body-color: #555;
-$heading-color: #333;
-$highlight-color: #ccc;
-$link-color: #333;
-$link-hover: #000;
-
-$ani_speed: 250ms;
+// To be overridden by each styletile
 
 
 // -------------------------------------------------
@@ -31,27 +23,27 @@ body,select,input,textarea {
 }
 // Custom text-selection colors (remove any text shadows:twitter.com/miketaylr/status/12228805301)
 ::-moz-selection {
-	background:$highlight-color;
+	background:#ccc;
 	color:#000;
 	text-shadow:none;
 }
 ::selection {
-	background:$highlight-color;
+	background:#ccc;
 	color:#000;
 	text-shadow:none;
 }
 // j.mp/webkit-tap-highlight-color
 a:link {
-	-webkit-tap-highlight-color:$highlight-color;
+	-webkit-tap-highlight-color:#ccc;
 }
 ins {
-	background-color:$highlight-color;
+	background-color:#ccc;
 	color:#000;
 	text-decoration:none;
 
 }
 mark {
-	background-color:$highlight-color;
+	background-color:#ccc;
 	color:#000;
 	font-style:italic;
 	font-weight:bold;
@@ -103,7 +95,7 @@ mark {
 
 // CSS Navigation Dropdown Transitions (not for iPad)
 @mixin trans-fade-hidden {
-	@include transition(opacity $ani_speed linear 0ms, visibility $ani_speed linear 0ms);
+	@include transition(opacity 250ms linear 0ms, visibility 250ms linear 0ms);
 	visibility: hidden;
 	opacity: 0;
 }

@@ -1,86 +1,105 @@
 /* -------------------------------------------------
 ** Extra Small Footer
 ** ---------------------------------------------- */
-footer {
-  margin: 0 -3%;
-  line-height: 1.5em;
+footer#layout-footer {
+	background-color: white;
+	background-color: rgba(255, 255, 255, 0.9);
+	margin: 0 -3%;
+	border-top: 1px solid #ccc;
+	bottom: 0;
+	box-shadow: 0 -1px 3px #ccc;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 1em;
+	position: fixed;
+	width: 100%;
+
+	@include media($small) {
+		padding: 1em 2em;
+	}
+	.extra-small-logo {
+		display: none;
+		float: left;
+
+		@include media($small) {
+			display: block;
+			margin-right: 0;
+			width: 100%;
+			height: auto;
+			max-width: 96px;
+		}
+	}
+	.title {
+		float: left;
+		width: 65%;
+
+		@include media($small) {
+			width: auto;
+		}
+		h1, h2 {
+			color: #555;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: .875em;
+			line-height: 1;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			margin-bottom: .5em;
+
+			@include media($small) {
+				border-left: 1px solid #ccc;
+				float: left;
+				font-size: 1em;
+				margin: 0.5em 1em 0;
+				padding-left: 1em;
+			}
+		}
+		h2 {
+			font-style: italic;
+
+			@include media($small) {
+				float: left;
+				font-size: 1em;
+				margin-top: .5em;
+			}
+		}
+		.fade {
+			margin-left: 0.1em;
+			color: #888888;
+			font-style: italic;
+		}
+	}
+	nav {
+		float: right;
+		font-size: .75em;
+		width: 35%;
+
+		@include media($small) {
+			float: right;
+			width: auto;
+		}
+		li {
+			float: right;
+
+			@include media($small) {
+				margin-left: 1em;
+				margin-right: 0;
+			}
+		}
+		a {
+			text-decoration: none;
+			color: #333333;
+			line-height: 1.6em;
+
+			&:hover, &:focus {
+				color: black;
+			}
+		}
+		.arrows {
+			font-size: 2.5em;
+			margin-left: 18px;
+			position: relative;
+			top: 8px;
+		}
+	}
 }
-
-
-footer {
-  background: rgba(255, 255, 255, 0.9);
-  border-top: 1px solid #ccc;
-  bottom: 0;
-  box-shadow: 0 -1px 3px #ccc;
-  font-family: Helvetica, Arial, sans-serif;
-  padding: 1em;
-  position: fixed;
-  width: 100%; }
-  @media screen and (min-width: 580px) {
-    footer {
-      padding: 1em 2em; } }
-  footer .extra-small-logo {
-    display: none;
-    float: left; }
-    @media screen and (min-width: 580px) {
-      footer .extra-small-logo {
-        display: block;
-        margin-right: 0;
-        width: auto; } }
-    footer .extra-small-logo img {
-      height: auto;
-      max-width: 96px; }
-  footer .title {
-    float: left;
-    width: 65%; }
-    @media screen and (min-width: 580px) {
-      footer .title {
-        width: auto; } }
-    footer .title h1 {
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: .875em;
-      margin-bottom: 0;
-      line-height: 1em;
-      margin-bottom: .5em; }
-      @media screen and (min-width: 580px) {
-        footer .title h1 {
-          float: left;
-          font-size: 1em;
-          border-left: 1px solid #ccc;
-          margin-bottom: 0;
-          margin-left: 1em;
-          margin-right: 1em;
-          margin-top: .5em;
-          padding-left: 1em; } }
-    footer .title h2 {
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: .875em;
-      font-style: italic;
-      line-height: 1em; }
-      @media screen and (min-width: 580px) {
-        footer .title h2 {
-          float: left;
-          font-size: 1em;
-          margin-top: .5em; } }
-    footer .title .fade {
-      color: #888888;
-      font-style: italic; }
-  footer nav {
-    float: right;
-    font-size: .75em;
-    width: 35%; }
-    @media screen and (min-width: 580px) {
-      footer nav {
-        float: right;
-        width: auto; } }
-    footer nav li {
-      float: right; }
-      @media screen and (min-width: 580px) {
-        footer nav li {
-          margin-left: 1em;
-          margin-right: 0; } }
-    footer nav .arrows {
-      font-size: 2.5em;
-      margin-left: 18px;
-      position: relative;
-      top: 8px; }

@@ -103,7 +103,7 @@ helpers do
     if num_of_iterations > 0
       current_iteration = Integer(current_resource.path.gsub(/(.*?v|\.html)/) { |match| "" })
 
-      if current_iteration < num_of_iterations
+      if current_iteration <= num_of_iterations
         return current_resource.path.gsub(/#{current_iteration}/) { |match| current_iteration + 1 }
       else
         return false
