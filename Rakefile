@@ -22,7 +22,7 @@ end
 
 desc "Initialize new project"
 task :init do
-	system(%Q[@bundle install])
-	system(%Q[@bundle exec bourbon install --path source/stylesheets/framework])
-	system(%Q[@cd source/stylesheets/framework; bundle exec neat install; cd ../../])
+	system(%Q[bundle install])
+	system(%Q[bundle exec bourbon install --path source/stylesheets/framework])
+	system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../])
 end
