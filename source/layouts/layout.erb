@@ -22,6 +22,9 @@
 
 <body class="<%= page_classes %>">
 
+	<h1><%= link_to "Previous Article", prev_link, :title => "Previous Style Tile" %></h1>
+	<h1><%= link_to "Next Article", next_link, :title => "Next Style Tile" %></h1>
+
 	<div class="styletile">
 		<%= yield %>
 	</div>

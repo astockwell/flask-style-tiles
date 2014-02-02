@@ -75,4 +75,42 @@ helpers do
   def site_url
     "http://dev.extrasmalldesign.com"
   end
+
+  def prev_link
+    unless current_resource.path.include? "index.html"
+      if current_resource.path.include? "v2"
+        return "index.html"
+      else
+        current_iteration = Integer(current_resource.path.gsub(/(.*?v|\.html)/) { |match| "" })
+        return current_resource.path.gsub(/#{current_iteration}/) { |match| current_iteration - 1 }
+      end
+    end
+    return "false"
+  end
+
+  def next_link
+    num_of_iterations = Dir.glob(File.join('source', 'v*.html.erb')).size
+
+    if current_resource.path.include? "index.html"
+      if num_of_iterations > 0
+        return "v2.html"
+      else
+        return "false"
+      end
+    end
+
+    if num_of_iterations == 1
+      if current_resource.path.include? "v2"
+        return "false"
+      end
+    elsif num_of_iterations >= 2
+      current_iteration = Integer(current_resource.path.gsub(/(.*?v|\.html)/) { |match| "" })
+      if num_of_iterations < current_iteration - 1
+        return current_resource.path.gsub(/#{current_iteration}/) { |match| current_iteration + 1 }
+      else
+        return "false"
+      end
+    end
+    return "false"
+  end
 end
