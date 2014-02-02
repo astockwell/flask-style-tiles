@@ -8,8 +8,7 @@ task :new do
 	stylesheet = ERB.new(File.read(File.join("templates","stylesheet.scss.erb")))
 
 	# Determine next template iteration
-	glob = Dir.glob(File.join('source', 'v*.html.erb'))
-	glob_size = glob.size
+	glob_size  = Dir.glob(File.join('source', 'v*.html.erb')).size
 	@iteration = (glob_size < 1) ? 2 : glob_size + 2
 
 	# Create new styletile html/scss files
