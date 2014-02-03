@@ -49,7 +49,7 @@ task :init => :data do
 		puts "Bourbon already installed. Skipping..."
 	end
 	unless File.directory?(File.join('source','stylesheets','framework','neat'))
-		system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../])
+		system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../../])
 	else
 		puts "Neat already installed. Skipping..."
 	end
