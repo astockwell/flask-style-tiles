@@ -29,3 +29,9 @@ Useage
 #### To change the template .html.erb and .scss files
 
 - Edit them in `templates/`
+
+#### Middleman tl;dr
+
+- Run `bundle exec middleman` to spawn a live-reloaded web server at `http://localhost:4567`
+- Run `bundle exec middleman build` to package your site into static files (for deployment) within a `build` directory
+- [Docs here](http://middlemanapp.com)
