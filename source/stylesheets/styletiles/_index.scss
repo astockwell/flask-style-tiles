@@ -1,4 +1,4 @@
-body.index .styletile {
+body.index {
 	// -------------------------------------------------
 	// VARIABLES
 	// -------------------------------------------------
@@ -107,70 +107,72 @@ body.index .styletile {
 	// -------------------------------------------------
 	// LAYOUT
 	// -------------------------------------------------
-	.content {
-		.column1 {
-			@include media($medium) {
-				float: left;
-				width: 45%;
-				margin-right: 5%
-			}
-			.headings {}
-		}
-		.column2 {
-			@include media($medium) {
-				float: left;
-				width: 45%;
-				margin-right: 5%
-			}
-			.swatches {
-				margin: 1em 0;
-				overflow: auto;
-
-				.swatch {
-					border-radius: 12px;
-					display: block;
-					float: left;
-					height: 80px;
-					margin-right: 2.5%;
-					width: 15%;
-				}
-				.swatch1 { background-color: $swatch-1; }
-				.swatch2 { background-color: $swatch-2; }
-				.swatch3 { background-color: $swatch-3; }
-				.swatch4 { background-color: $swatch-4; }
-			}
-			.lists {}
-		}
-		form {
-			input, textarea {
-				border: 1px solid $swatch-3;
-				display: block;
-				outline: 0;
-				width: 100%;
-
+	.styletile {
+		.content {
+			.column1 {
 				@include media($medium) {
-					width: 50%;
+					float: left;
+					width: 45%;
+					margin-right: 5%
 				}
-				&:active, &:focus {
-					border: 1px solid $swatch-2;
-				}
+				.headings {}
 			}
-			input[type="text"] {}
-			input[type="submit"] {
-				background: $swatch-3;
-				border: none;
-				color: white;
-				width: auto;
+			.column2 {
+				@include media($medium) {
+					float: left;
+					width: 45%;
+					margin-right: 5%
+				}
+				.swatches {
+					margin: 1em 0;
+					overflow: auto;
 
-				&:hover {
-					background: $swatch-2;
+					.swatch {
+						border-radius: 12px;
+						display: block;
+						float: left;
+						height: 80px;
+						margin-right: 2.5%;
+						width: 15%;
+					}
+					.swatch1 { background-color: $swatch-1; }
+					.swatch2 { background-color: $swatch-2; }
+					.swatch3 { background-color: $swatch-3; }
+					.swatch4 { background-color: $swatch-4; }
 				}
-				&:active {
-					background: $swatch-1;
+				.lists {}
+			}
+			form {
+				input, textarea {
+					border: 1px solid $swatch-3;
+					display: block;
+					outline: 0;
+					width: 100%;
+
+					@include media($medium) {
+						width: 50%;
+					}
+					&:active, &:focus {
+						border: 1px solid $swatch-2;
+					}
+				}
+				input[type="text"] {}
+				input[type="submit"] {
+					background: $swatch-3;
+					border: none;
+					color: white;
+					width: auto;
+
+					&:hover {
+						background: $swatch-2;
+					}
+					&:active {
+						background: $swatch-1;
+					}
 				}
 			}
+			a.button {}
 		}
-		a.button {}
 	}
 
 	@include media($small)  {}

@@ -78,6 +78,9 @@ footer#layout-footer {
 			float: right;
 			width: auto;
 		}
+		ul {
+			@include ul-reset;
+		}
 		li {
 			float: right;
 

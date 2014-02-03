@@ -12,27 +12,31 @@ task :new do
 	# Determine next template iteration
 	glob_size  = Dir.glob(File.join('source', 'v*.html.erb')).size
 	@iteration = (glob_size < 1) ? 2 : glob_size + 2
+	@name = "v#{@iteration}"
 
 	# Create new styletile html/scss files
-	File.open(File.join("source","v#{@iteration}.html.erb"), 'w') { |file| file.write(template.result) }
-	File.open(File.join("source","stylesheets","styletiles","_v#{@iteration}.scss"), 'w') { |file| file.write(stylesheet.result) }
+	File.open(File.join("source","#{@name}.html.erb"), 'w') { |file| file.write(template.result) }
+	File.open(File.join("source","stylesheets","styletiles","_#{@name}.scss"), 'w') { |file| file.write(stylesheet.result) }
 
 	# Include new SASS file in screen.scss
-	File.open(File.join("source","stylesheets","screen.scss"), 'a') { |f| f.write("\n@import \"styletiles/v#{@iteration}\";") }
+	File.open(File.join("source","stylesheets","screen.scss"), 'a') { |f| f.write("\n@import \"styletiles/#{@name}\";") }
 end
 
 directory "data"
 
 desc "Initialize new project"
 task :init => :data do
-	# system(%Q[bundle install])
-	# system(%Q[bundle exec bourbon install --path source/stylesheets/framework])
-	# system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../])
-	# system(%Q[bower install])
+	# Bootstrap project
+	system(%Q[bundle install])
+	system(%Q[bundle exec bourbon install --path source/stylesheets/framework]) unless File.directory?(File.join('source','stylesheets','framework','bourbon'))
+	system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../]) unless File.directory?(File.join('source','stylesheets','framework','neat'))
+	system(%Q[bower install]) unless File.directory?(File.join('bower_components'))
+
+	# Generate project info file from user input
 	unless File.file?(File.join('data','project.json'))
-		project = {}
-		project[:client] = ask("What is the client's name?  ")
-		File.open(File.join("data","project.json"), 'w') { |file| file.write(JSON.dump(project)) }
+		project_info = {}
+		project_info[:project] = ask("What is the client's name?  ")
+		File.open(File.join("data","project.json"), 'w') { |file| file.write(JSON.dump(project_info)) }
 	else
 		puts "Project config file already exists at data/project.json. Reusing..."
 	end

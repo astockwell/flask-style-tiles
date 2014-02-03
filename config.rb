@@ -1,3 +1,5 @@
+require 'json'
+
 ###
 # Compass
 ###
@@ -74,6 +76,15 @@ end
 helpers do
   def site_url
     "http://dev.extrasmalldesign.com"
+  end
+
+  def get_project_name
+    begin
+      project_info = JSON.parse(File.read(File.join("data","project.json")))
+      project_info["project"]
+    rescue
+      "client name not set, run: <code>rake init</code>"
+    end
   end
 
   def prev_link

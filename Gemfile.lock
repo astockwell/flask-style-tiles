@@ -26,6 +26,7 @@ GEM
     fssm (0.2.10)
     haml (4.0.5)
       tilt
+    highline (1.6.20)
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.9)
@@ -105,6 +106,7 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon (~> 3.1.8)
+  highline (~> 1.6.20)
   middleman (~> 3.2.2)
   middleman-livereload (~> 3.1.0)
   neat (~> 1.5.0)
