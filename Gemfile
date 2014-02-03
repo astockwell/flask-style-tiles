@@ -8,3 +8,6 @@ gem "therubyracer", "~> 0.12.0"
 
 gem "bourbon", "~> 3.1.8"
 gem "neat", "~> 1.5.0"
+
+# Rakefile
+gem "highline", "~> 1.6.20"

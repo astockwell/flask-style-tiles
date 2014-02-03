@@ -1,5 +1,7 @@
 require 'erb'
+require 'json'
 require 'rubygems'
+require 'highline/import'
 
 desc "Create new style tile scaffold"
 task :new do
@@ -19,10 +21,19 @@ task :new do
 	File.open(File.join("source","stylesheets","screen.scss"), 'a') { |f| f.write("\n@import \"styletiles/v#{@iteration}\";") }
 end
 
+directory "data"
+
 desc "Initialize new project"
-task :init do
-	system(%Q[bundle install])
-	system(%Q[bundle exec bourbon install --path source/stylesheets/framework])
-	system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../])
-	system(%Q[bower install])
+task :init => :data do
+	# system(%Q[bundle install])
+	# system(%Q[bundle exec bourbon install --path source/stylesheets/framework])
+	# system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../])
+	# system(%Q[bower install])
+	unless File.file?(File.join('data','project.json'))
+		project = {}
+		project[:client] = ask("What is the client's name?  ")
+		File.open(File.join("data","project.json"), 'w') { |file| file.write(JSON.dump(project)) }
+	else
+		puts "Project config file already exists at data/project.json. Reusing..."
+	end
 end
