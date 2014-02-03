@@ -28,9 +28,21 @@ desc "Initialize new project"
 task :init => :data do
 	# Bootstrap project
 	system(%Q[bundle install])
-	system(%Q[bundle exec bourbon install --path source/stylesheets/framework]) unless File.directory?(File.join('source','stylesheets','framework','bourbon'))
-	system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../]) unless File.directory?(File.join('source','stylesheets','framework','neat'))
-	system(%Q[bower install]) unless File.directory?(File.join('bower_components'))
+	unless File.directory?(File.join('source','stylesheets','framework','bourbon'))
+		system(%Q[bundle exec bourbon install --path source/stylesheets/framework])
+	else
+		puts "Bourbon already installed. Skipping..."
+	end
+	unless File.directory?(File.join('source','stylesheets','framework','neat'))
+		system(%Q[cd source/stylesheets/framework; bundle exec neat install; cd ../../])
+	else
+		puts "Neat already installed. Skipping..."
+	end
+	unless File.directory?(File.join('bower_components'))
+		system(%Q[bower install])
+	else
+		puts "Bower components already installed. Skipping..."
+	end
 
 	# Generate project info file from user input
 	unless File.file?(File.join('data','project.json'))
