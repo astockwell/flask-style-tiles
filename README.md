@@ -1,7 +1,7 @@
 Flask Style Tiles
 =================
 
-Scaffold for [Style Tiles](http://styletil.es) presentation project, built on [Flask](http://github.com/kylelarkin/flask) using [Middleman](http://middlemanapp.com)
+Scaffold for [Style Tiles](http://styletil.es) presentation project, built on [KL[AS] Flask](http://github.com/kylelarkin/flask) using [Middleman](http://middlemanapp.com)
 
 
 Installation
