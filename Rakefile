@@ -11,8 +11,15 @@ task :new do
 
 	# Determine next template iteration
 	glob_size  = Dir.glob(File.join('source', 'v*.html.erb')).size
-	@iteration = (glob_size < 1) ? 2 : glob_size + 2
-	@name = "v#{@iteration}"
+
+	# Confirm index exists, establish outfile names/options
+	unless Dir.glob(File.join('source', 'index.html.erb'))
+		@iteration = 1
+		@name = "index"
+	else
+		@iteration = (glob_size < 1) ? 2 : glob_size + 2
+		@name = "v#{@iteration}"
+	end
 
 	# Create new styletile html/scss files
 	File.open(File.join("source","#{@name}.html.erb"), 'w') { |file| file.write(template.result) }
