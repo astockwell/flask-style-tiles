@@ -74,10 +74,16 @@ after_configuration do
 end
 
 helpers do
+  #
+  # Provide deploy target site root url
+  #
   def site_url
     "http://dev.extrasmalldesign.com"
   end
 
+  #
+  # Read and provide project name to layout
+  #
   def get_project_name
     begin
       project_info = JSON.parse(File.read(File.join("data","project.json")))
@@ -87,6 +93,9 @@ helpers do
     end
   end
 
+  #
+  # Provide previous styletile link to layout (if avail)
+  #
   def prev_link
     unless current_resource.path.include? "index.html"
       if current_resource.path.include? "v2"
@@ -100,6 +109,9 @@ helpers do
     return false
   end
 
+  #
+  # Provide next styletile link to layout (if avail)
+  #
   def next_link
     num_of_iterations = Dir.glob(File.join('source', '*v*.html.erb')).size
 
