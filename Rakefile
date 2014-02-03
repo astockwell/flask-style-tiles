@@ -9,14 +9,12 @@ task :new do
 	template   = ERB.new(File.read(File.join("templates","styletile.html.erb")))
 	stylesheet = ERB.new(File.read(File.join("templates","stylesheet.scss.erb")))
 
-	# Determine next template iteration
-	glob_size  = Dir.glob(File.join('source', 'v*.html.erb')).size
-
-	# Confirm index exists, establish outfile names/options
-	unless Dir.glob(File.join('source', 'index.html.erb'))
+	# Confirm index exists, determine next template iteration
+	if Dir.glob(File.join('source', 'index.html.erb')).empty?
 		@iteration = 1
 		@name = "index"
 	else
+		glob_size  = Dir.glob(File.join('source', 'v*.html.erb')).size
 		@iteration = (glob_size < 1) ? 2 : glob_size + 2
 		@name = "v#{@iteration}"
 	end
