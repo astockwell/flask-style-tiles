@@ -57,4 +57,7 @@ task :init => :data do
 	else
 		puts "Project config file already exists at data/project.json. Reusing..."
 	end
+
+	# Build first template iteration (index.html.erb + scss)
+	Rake::Task["new"].invoke
 end
