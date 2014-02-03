@@ -8,7 +8,7 @@ Installation
 ------------
 
 1. Prerequisites: Ruby (Bundler, Rake), Bower
-2. Clone repository locally
+2. Clone repository
 3. Run `rake init`
 
 Useage
@@ -34,4 +34,4 @@ Useage
 
 - Run `bundle exec middleman` to spawn a live-reloaded web server at `http://localhost:4567`
 - Run `bundle exec middleman build` to package your site into static files (for deployment) within a `build` directory
-- [Docs here](http://middlemanapp.com)
+- [Middleman Documentation](http://middlemanapp.com)
