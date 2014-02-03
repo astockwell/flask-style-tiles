@@ -64,7 +64,7 @@ task :init => :data do
 	#
 	unless File.file?(File.join('data','project.json'))
 		project_info = {}
-		project_info[:project] = ask("What is the client's name?  ")
+		project_info[:project] = ask("What is the project's name?  ")
 		File.open(File.join("data","project.json"), 'w') { |file| file.write(JSON.dump(project_info)) }
 	else
 		puts "Project config file already exists at data/project.json. Reusing..."
