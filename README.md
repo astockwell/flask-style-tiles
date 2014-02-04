@@ -9,14 +9,16 @@ Installation
 
 1. Prerequisites: Ruby (Bundler, Rake), Bower
 2. Clone repository
+3. `cd` into repository and run `bundle install`
 3. Run `rake init`
+
 
 Useage
 ------
 
 #### `rake init`
 
-- Bootstraps your project folder by running: `bundle install`, `bower install`, and installing bourbon and neat (for scss).
+- Bootstraps your project folder by running `bower install`, and installing bourbon and neat (for scss).
 - Prompts for the project name, and saves that in `data/project.json` for use by the layout files
 - Automatically calls `rake new`
 

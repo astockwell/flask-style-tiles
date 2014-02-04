@@ -3,8 +3,10 @@ require 'json'
 require 'rubygems'
 require 'highline/import'
 
+directory "source/stylesheets/styletiles"
+
 desc "Create new style tile scaffold"
-task :new do
+task :new => :"source/stylesheets/styletiles" do
 	#
 	# Read in templates
 	#
@@ -42,7 +44,6 @@ task :init => :data do
 	#
 	# Bootstrap project
 	#
-	system(%Q[bundle install])
 	unless File.directory?(File.join('source','stylesheets','framework','bourbon'))
 		system(%Q[bundle exec bourbon install --path source/stylesheets/framework])
 	else
